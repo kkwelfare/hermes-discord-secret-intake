@@ -1,0 +1,14 @@
+name: discord-secret-intake
+version: "0.3.0"
+description: "Discord /secret modal intake that stores values in the configured Bitwarden Secrets Manager project without echoing them to chat or logs."
+author: "kkwelfare"
+requires_hermes: ">=0.21.5"
+config_schema:
+  guild_ids:
+    type: list
+    default: []
+    description: "Discord guild (server) IDs where /secret is registered as a guild command. Empty = not installed."
+  allowed_user_ids:
+    type: list
+    default: []
+    description: "Discord user IDs allowed to run /secret. Checked in addition to the gateway's own authorization; DISCORD_ALLOW_ALL_USERS does not bypass it. Empty = not installed."
